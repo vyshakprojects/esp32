@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Settings - Manage Buttons</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/settings.html">Settings</a>
+            <a href="/status.html">Status</a>
+            <a href="/history.html">History</a>
+        </nav>
+
+        <h2>Add New Button</h2>
+        <form id="add-button-form">
+            <label for="new-button-name">Name:</label>
+            <input type="text" id="new-button-name" required><br>
+            <label for="new-button-gpio">GPIO Pin:</label>
+            <select id="new-button-gpio" required></select><br>
+            <button type="submit">Add Button</button>
+        </form>
+
+        <h2>Existing Buttons</h2>
+        <div id="existing-buttons-list">
+            </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            populateAvailableGPIOPins('new-button-gpio');
+            loadSettingsButtons();
+            document.getElementById('add-button-form').addEventListener('submit', handleAddButton);
+        });
+    </script>
+</body>
+</html>

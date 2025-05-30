@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP32 Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32 Status</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/settings.html">Settings</a>
+            <a href="/status.html">Status</a>
+            <a href="/history.html">History</a>
+        </nav>
+        <div id="status-info">
+            <p><strong>Uptime:</strong> <span id="uptime"></span></p>
+            <p><strong>Free Heap:</strong> <span id="free-heap"></span> bytes</p>
+            <p><strong>Chip ID:</strong> <span id="chip-id"></span></p>
+            <p><strong>Flash Size:</strong> <span id="flash-size"></span> bytes</p>
+            <p><strong>CPU Freq:</strong> <span id="cpu-freq"></span> MHz</p>
+            <p><strong>SDK Version:</strong> <span id="sdk-version"></span></p>
+            <p><strong>WiFi Signal (RSSI):</strong> <span id="wifi-rssi"></span> dBm</p>
+            <p><strong>Local IP:</strong> <span id="local-ip"></span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadESP32Status);
+    </script>
+</body>
+</html>
